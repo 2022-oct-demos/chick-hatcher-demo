@@ -1,4 +1,4 @@
-# Plan
+# Plan for Chick Hatching Game
 
 ### HTML elements (page load)
 
