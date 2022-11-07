@@ -38,7 +38,7 @@
 -   renderChick(chick)- create a check element for the specific chick object
 -   chickClickHandler - take care of the game logic which chicks are clicked
 
-### Slices
+### Vertical Slices to work in (working by feature)
 
     1. rendering chicks list to page
     2. form to create new chicks (render to page)
