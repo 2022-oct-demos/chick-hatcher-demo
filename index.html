@@ -31,11 +31,13 @@
         <main>
             <div class="farmer-stats">
                 <div class="hatched-chicks">
-                    <p>You have hatched <span id="hatched-number">0</span> chicks</p>
+                    <p aria-live="polite">
+                        You have hatched <span id="hatched-number">0</span> chicks
+                    </p>
                     <div class="hatched-list"></div>
                 </div>
                 <div class="farmer">
-                    <p>
+                    <p aria-live="polite">
                         Your HP:
                         <span id="farmer-hp">3</span>
                     </p>
@@ -52,7 +54,7 @@
                     <input name="chick-name" id="chick-name" type="text" />
                     <button type="submit">New Egg <span aria-hidden="true">🥚</span></button>
                 </form>
-                <div class="chicks">
+                <div class="chicks" aria-live="polite">
                     <!-- <div class="chick">
                         <div class="row">
                             <p>Peep</p>

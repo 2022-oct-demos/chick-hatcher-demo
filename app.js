@@ -91,9 +91,9 @@ function displayChicks() {
 
     for (let chick of chicks) {
         const chickEl = renderChick(chick);
-        // chickEl.addEventListener('click', () => {
-        //     chickClickHandler(chick);
-        // });
+        chickEl.addEventListener('click', () => {
+            chickClickHandler(chick);
+        });
         chickListEl.append(chickEl);
     }
 }
