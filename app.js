@@ -83,6 +83,9 @@ function chickClickHandler(chick) {
     const eggEl = document.getElementById(`chick-${chick.id}`);
     // if chick's hp greater than 0, set textcont to egg emoji, else set textcont to hatched chick emoji
     eggEl.textContent = chick.hp > 0 ? '🥚' : '🐣';
+
+    const srEl = document.getElementById(`chick-sr-${chick.id}`);
+    srEl.textContent = chick.hp > 0 ? 'egg emoji' : 'hatched chick emoji';
 }
 
 /* Display Functions */
