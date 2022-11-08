@@ -1,27 +1,45 @@
-## The Golden Rule:
+# Plan for Chick Hatching Game
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+### HTML elements (page load)
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+    - input for adding new chicks (with a button) => form
+    - span for tracking hatched chicks
+    - span for tracking farmer HP
+    - chicks list (div el)
 
-## Making a plan
+### State
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+    - array of chicks (object with id, name, hp)
+    - number of hatched chicks
+    - farmer hp
+    - currentID (in order to create new chicks with ids)
 
-Additional considerations:
+### Events
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+    - each chick is clickable
+        - on click...
+            - possibly decrement the chick's hp
+            - possibly decrement the farmers hp
+            - possibly increment the hatched chicks
+            - update the DOM with new chick and farmer hp and hatched chicks state
+    - new chick form (on submit)
+        - user supplied name & submit form
+        - make new chick object
+        - add object to chicks array
+        - "update list display"
+            - clear out the list DOM
+            - loop through the chicks
+            - render a new chick element for each item
+            - append each el to the container el
+
+### Functions
+
+-   displayChicks - clear out the list and render the chick element for each item
+-   renderChick(chick)- create a check element for the specific chick object
+-   chickClickHandler - take care of the game logic which chicks are clicked
+
+### Vertical Slices to work in (working by feature)
+
+    1. rendering chicks list to page
+    2. form to create new chicks (render to page)
+    3. gamification (resulting impacts to HP on user clicks)
