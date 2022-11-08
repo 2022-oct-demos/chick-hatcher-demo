@@ -13,12 +13,8 @@ export function renderChick(chick) {
     hpEl.id = `chick-hp-${chick.id}`;
 
     srEl.classList.add('screen-reader-only');
-    if (chick.hp > 0) {
-        srEl.textContent = 'egg emoji';
-    } else {
-        srEl.textContent = 'hatched chick emoji';
-    }
-    //eggEl.append(srEl);
+    srEl.id = `chick-sr-${chick.id}`;
+    srEl.textContent = chick.hp > 0 ? 'egg emoji' : 'hatched chick emoji';
 
     eggEl.id = `chick-${chick.id}`;
     // if chick's hp greater than 0, set textcont to egg emoji, else set textcont to hatched chick emoji
